@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mothukuri Bharath - Resume</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1e293b;
+            --secondary: #475569;
+            --accent: #2563eb;
+            --border: #e2e8f0;
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --bg-body: #f8fafc;
+            --bg-sheet: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Action bar for saving/printing/going back */
+        .action-bar {
+            width: 100%;
+            max-width: 820px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-back {
+            background-color: transparent;
+            color: var(--secondary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-back:hover {
+            background-color: #f1f5f9;
+            color: var(--text-dark);
+        }
+
+        .btn-print {
+            background-color: var(--accent);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-print:hover {
+            background-color: #1d4ed8;
+            box-shadow: 0 4px 12px -1px rgba(37, 99, 235, 0.3);
+            transform: translateY(-1px);
+        }
+
+        /* Resume Sheet A4 proportions */
+        .resume-sheet {
+            background-color: var(--bg-sheet);
+            width: 100%;
+            max-width: 820px;
+            min-height: 1100px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styles */
+        header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--secondary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            font-size: 0.95rem;
+        }
+
+        /* Section Layout */
+        .section {
+            margin-bottom: 1.8rem;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .summary-text {
+            font-size: 0.92rem;
+            color: var(--secondary);
+            text-align: justify;
+        }
+
+        /* Entry blocks (Education, Experience, Projects) */
+        .entry {
+            margin-bottom: 1.2rem;
+        }
+
+        .entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .entry-title {
+            font-weight: 700;
+        }
+
+        .entry-subtitle {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--secondary);
+            font-style: italic;
+            margin-bottom: 0.4rem;
+        }
+
+        .entry-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .entry-bullets {
+            list-style-type: disc;
+            padding-left: 1.2rem;
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+
+        .entry-bullets li {
+            margin-bottom: 0.25rem;
+        }
+
+        /* Skills block layout */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .skills-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            border-bottom: 1px solid #f1f5f9;
+            padding: 0.5rem 0;
+        }
+
+        .skills-row:last-child {
+            border-bottom: none;
+        }
+
+        .skills-lbl {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .skills-val {
+            color: var(--secondary);
+        }
+
+        /* Certifications Grid */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .cert-item-box {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.8rem;
+            background-color: #fafbfc;
+        }
+
+        .cert-item-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.15rem;
+        }
+
+        .cert-item-auth {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .cert-item-date {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-top: 0.3rem;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+
+            .action-bar {
+                display: none;
+            }
+
+            .resume-sheet {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                width: 100%;
+                max-width: 100%;
+                border-radius: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Action Bar for UI and PDF generation -->
+    <div class="action-bar">
+        <a href="index.html" class="btn btn-back"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+        <button onclick="window.print()" class="btn btn-print"><i class="fa-solid fa-print"></i> Print / Save PDF</button>
+    </div>
+
+    <!-- Resume Document -->
+    <main class="resume-sheet">
+        <!-- Header -->
+        <header>
+            <h1 class="name">MOTHUKURI BHARATH</h1>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:bharathchowdary250@gmail.com">bharathchowdary250@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 9390279942</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <a href="https://linkedin.com/in/mothukuribharath25" target="_blank">linkedin.com/in/mothukuribharath25</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-github"></i>
+                    <a href="https://github.com/bharathnow" target="_blank">github.com/bharathnow</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Summary -->
+        <section class="section">
+            <h2 class="section-title">Summary</h2>
+            <p class="summary-text">
+                Motivated and detail-oriented BE student with a strong foundation in software development and experience in developing projects using technologies such as Java, Python, and web development tools, with hands-on exposure to system design, operating systems, and real-time application development.
+            </p>
+        </section>
+
+        <!-- Internship -->
+        <section class="section">
+            <h2 class="section-title">Internship</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Data Science & Machine Learning Intern</span>
+                    <span class="entry-date">Aug 2025 – Oct 2025</span>
+                </div>
+                <div class="entry-subtitle">HDLC, Chennai</div>
+                <ul class="entry-bullets">
+                    <li>Cleaned and preprocessed datasets using Python (Pandas, NumPy) to improve data quality.</li>
+                    <li>Built and evaluated ML models (regression & classification) using Scikit-learn.</li>
+                    <li>Visualized insights using Matplotlib to support decision-making processes.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Bachelor of Engineering – CSE (Artificial Intelligence)</span>
+                    <span class="entry-date">Aug 2023 – Present</span>
+                </div>
+                <div class="entry-subtitle">Saveetha School of Engineering, Chennai</div>
+                <div class="entry-bullets" style="list-style-type: none; padding-left: 0; font-size: 0.9rem;">
+                    <strong>CGPA: 8.59</strong>
+                </div>
+            </div>
+            
+            <div class="entry" style="margin-top: 0.8rem;">
+                <div class="entry-header">
+                    <span class="entry-title">Intermediate (Higher Secondary Education)</span>
+                    <span class="entry-date">May 2021 – Apr 2023</span>
+                </div>
+                <div class="entry-subtitle">Narayana Junior College Guntur, Andhra Pradesh</div>
+                <div class="entry-bullets" style="list-style-type: none; padding-left: 0; font-size: 0.9rem;">
+                    <strong>Percentage: 92.2%</strong>
+                </div>
+            </div>
+
+            <div class="entry" style="margin-top: 0.8rem;">
+                <div class="entry-header">
+                    <span class="entry-title">Matriculation (Secondary Education)</span>
+                    <span class="entry-date">May 2020 – Apr 2021</span>
+                </div>
+                <div class="entry-subtitle">Royal High School Guntur, Andhra Pradesh</div>
+                <div class="entry-bullets" style="list-style-type: none; padding-left: 0; font-size: 0.9rem;">
+                    <strong>Percentage: 100%</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-table">
+                <div class="skills-row">
+                    <div class="skills-lbl">Languages</div>
+                    <div class="skills-val">C++, Python, Java, C</div>
+                </div>
+                <div class="skills-row">
+                    <div class="skills-lbl">Frameworks/Libraries</div>
+                    <div class="skills-val">Node.js, React.js, Pandas, NumPy, Scikit-learn, Matplotlib</div>
+                </div>
+                <div class="skills-row">
+                    <div class="skills-lbl">Tools/Platforms</div>
+                    <div class="skills-val">MySQL, Burp Suite, GitHub, VS Code, Android Studio</div>
+                </div>
+                <div class="skills-row">
+                    <div class="skills-lbl">Core Subjects</div>
+                    <div class="skills-val">Data Structures, Operating Systems, DBMS</div>
+                </div>
+                <div class="skills-row">
+                    <div class="skills-lbl">Soft Skills</div>
+                    <div class="skills-val">Problem Solving, Adaptability</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Investigating the Efficiency of Artificial Intelligence in Predicting Stock Prices</span>
+                    <span class="entry-date">2023</span>
+                </div>
+                <ul class="entry-bullets">
+                    <li>Developed a machine learning model to predict stock prices using historical data.</li>
+                    <li>Performed data preprocessing and feature selection to improve model accuracy.</li>
+                    <li>Implemented regression algorithms to analyze trends in TCS and Amazon datasets.</li>
+                    <li>Achieved prediction accuracy of approximately 80–85% after model evaluation.</li>
+                </ul>
+            </div>
+
+            <div class="entry" style="margin-top: 1rem;">
+                <div class="entry-header">
+                    <span class="entry-title">Comparing Regression Analysis and Market Analysis in Predicting Car Prices</span>
+                    <span class="entry-date">2023</span>
+                </div>
+                <ul class="entry-bullets">
+                    <li>Built regression models to predict car prices based on features like mileage, fuel type, and year.</li>
+                    <li>Analyzed dataset of 5,000+ car records to identify pricing patterns.</li>
+                    <li>Improved prediction accuracy by 20% using feature selection techniques.</li>
+                    <li>Compared regression results with market trends for better accuracy.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="section" style="margin-bottom: 0;">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certs-grid">
+                <div class="cert-item-box">
+                    <div class="cert-item-auth">Oracle</div>
+                    <div class="cert-item-title">MySQL Certification</div>
+                    <div class="cert-item-date">Jul 2025</div>
+                </div>
+                <div class="cert-item-box">
+                    <div class="cert-item-auth">Oracle</div>
+                    <div class="cert-item-title">Java SE 17 Certification</div>
+                    <div class="cert-item-date">Jul 2025</div>
+                </div>
+                <div class="cert-item-box">
+                    <div class="cert-item-auth">Coursera</div>
+                    <div class="cert-item-title">Android Development</div>
+                    <div class="cert-item-date">Aug 2024</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
