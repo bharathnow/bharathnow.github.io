@@ -154,10 +154,10 @@ animateParticles();
    ========================================================================== */
 const typedTextElement = document.getElementById('typed-text');
 const roles = [
-    'Artificial Intelligence Systems.',
-    'Machine Learning Models.',
-    'Data Science Analytics.',
-    'Robust Software Solutions.'
+    'Autonomous AI Research Agents.',
+    'Machine Learning & Data Models.',
+    'Android Productivity Applications.',
+    'Full-Stack Software Solutions.'
 ];
 
 let roleIndex = 0;
@@ -166,6 +166,7 @@ let isDeleting = false;
 let typingSpeed = 100;
 
 function typeWriter() {
+    if (!typedTextElement) return;
     const currentRole = roles[roleIndex];
     
     if (isDeleting) {
@@ -204,16 +205,18 @@ const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
 const navLinksContainer = document.querySelector('.nav-links');
 const navLinks = document.querySelectorAll('.nav-link');
 
-mobileNavToggle.addEventListener('click', () => {
-    mobileNavToggle.classList.toggle('open');
-    navLinksContainer.classList.toggle('open');
-});
+if (mobileNavToggle) {
+    mobileNavToggle.addEventListener('click', () => {
+        mobileNavToggle.classList.toggle('open');
+        navLinksContainer.classList.toggle('open');
+    });
+}
 
 // Close mobile navigation when clicking on a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        mobileNavToggle.classList.remove('open');
-        navLinksContainer.classList.remove('open');
+        if (mobileNavToggle) mobileNavToggle.classList.remove('open');
+        if (navLinksContainer) navLinksContainer.classList.remove('open');
     });
 });
 
@@ -226,10 +229,12 @@ const sections = document.querySelectorAll('section');
 
 window.addEventListener('scroll', () => {
     // Add sticky class on scroll
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+    if (header) {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     }
 
     // Scroll spy: highlight current section in navigation
@@ -270,7 +275,6 @@ skillTabs.forEach(tab => {
             const cardCategory = card.getAttribute('data-category');
             if (category === 'all' || cardCategory === category) {
                 card.style.display = 'flex';
-                // Trigger quick visual reload effect
                 card.style.opacity = '1';
                 card.style.transform = 'scale(1)';
             } else {
@@ -297,7 +301,7 @@ const skillsObserver = new IntersectionObserver((entries) => {
                 const targetProgress = bar.getAttribute('data-progress');
                 bar.style.width = targetProgress;
             });
-            skillsObserver.unobserve(entry.target); // Trigger only once
+            skillsObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.15 });
@@ -329,65 +333,87 @@ fadeInElements.forEach(element => {
 const modal = document.getElementById('project-modal');
 const modalBody = document.getElementById('modal-body-content');
 
-// Project Data Details
+// Project Data Details (Matching Resume Exactly)
 const projectDetails = {
-    'stock-predict': {
-        meta: '2023 • AI & Linear/Polynomial Regression',
-        title: 'Investigating the Efficiency of Artificial Intelligence in Predicting Stock Prices',
-        tags: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib', 'Regression'],
+    'ae-02-agent': {
+        meta: '2025 • Top 3 Hackathon Winner • Claude API Backbone',
+        title: 'Self-Evolving Autonomous Research Agent (AE-02) — 24-Hour Hackathon',
+        tags: ['Next.js', 'React.js', 'TypeScript', 'Claude API (LLM Backbone)', 'Antigravity'],
         content: `
-            <h4>Project Abstract & Problem Statement</h4>
-            <p>Predicting stock market valuations is a classic yet highly complex financial problem due to high volatility and market sentiment. This research project investigates the mathematical performance and accuracy limits of linear regression algorithms when forecasting closing share values using historical datasets.</p>
+            <h4>Project Abstract & Hackathon Highlights</h4>
+            <p>Built during an intensive 24-hour hackathon, AE-02 is a self-evolving autonomous research agent designed to perform complex research workflows end-to-end using Claude API as its LLM engine.</p>
             
             <div class="metric-highlight">
-                <i class="fa-solid fa-square-poll-vertical"></i>
-                <span><strong>Key Result:</strong> Successfully evaluated historical trends on TCS and Amazon, reaching a validation score (R² score) of 80% to 85% after optimization.</span>
+                <i class="fa-solid fa-trophy"></i>
+                <span><strong>Award:</strong> Placed <strong>Top 3</strong> out of all competing teams in the hackathon.</span>
             </div>
 
-            <h4>Core Methodologies & Architecture</h4>
+            <h4>Core Contributions & Implementation</h4>
             <ul>
-                <li><strong>Data Mining & Preprocessing:</strong> Gathered and parsed high-volume historical market records (open, high, low, volume, and close metrics). Standardized data ranges and addressed missing records.</li>
-                <li><strong>Feature Engineering:</strong> Constructed moving averages, historical variances, and volume indexes as predictors. Applied feature ranking techniques using Scikit-learn to remove redundant variables.</li>
-                <li><strong>Model Development:</strong> Implemented and cross-validated multiple regression forms (Linear, Ridge, and Lasso) to fit lines and prevent overfitting.</li>
-                <li><strong>Visualization Analysis:</strong> Plotted predictive projections alongside true price values using Matplotlib to demonstrate variance patterns clearly.</li>
+                <li><strong>Frontend Architecture:</strong> Built the full web interface using Next.js, React.js, and TypeScript, delivering a responsive real-time research dashboard.</li>
+                <li><strong>LLM Backbone Integration:</strong> Connected Claude API endpoints to support multi-step autonomous research cycles and self-evolving query refinements.</li>
+                <li><strong>Critical Bug Fix:</strong> Diagnosed and fixed a critical bug in the <code>runResearchApi</code> function (<code>api.ts</code>) that silently swallowed backend errors, restoring accurate real-time research results across the full pipeline.</li>
             </ul>
 
-            <h4>Key Technical Insights</h4>
-            <p>The study demonstrated that while baseline linear models perform highly in steady trend patterns, polynomial enhancements or regularizations are necessary to prevent error accumulation during abrupt market pivots. Feature selection increased prediction speed by 35% without losing predictive precision.</p>
+            <h4>GitHub Repository</h4>
+            <p><a href="https://github.com/bharathnow" target="_blank" style="color:#00f2fe; text-decoration:underline;"><i class="fa-brands fa-github"></i> github.com/bharathnow</a></p>
         `
     },
-    'car-predict': {
-        meta: '2023 • Predictive Analytics & Comparative Evaluation',
-        title: 'Comparing Regression Analysis and Market Analysis in Predicting Car Prices',
-        tags: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Feature Engineering', 'Market Analysis'],
+    'detox-app': {
+        meta: '2024 • Native Android Application',
+        title: 'Detox — Screen Time Reduction Mobile Application',
+        tags: ['Android Studio', 'Java', 'Android SDK', 'Mobile UI/UX'],
         content: `
-            <h4>Project Abstract & Problem Statement</h4>
-            <p>Evaluating secondhand automobile values is a complex multi-factor problem. Traditional appraisal processes are slow and subjective. This project automates valuation by contrasting structured regression modeling directly with general market analysis heuristics.</p>
+            <h4>Project Abstract & Objectives</h4>
+            <p>Detox is a native Android productivity application designed from scratch to help users analyze, monitor, and curb excessive smartphone usage through customizable screen-time management features.</p>
             
             <div class="metric-highlight">
-                <i class="fa-solid fa-gauge-high"></i>
-                <span><strong>Key Result:</strong> Modeled a dataset of 5,000+ car listings, improving predictions by 20% compared to baseline pricing models.</span>
+                <i class="fa-solid fa-mobile-screen"></i>
+                <span><strong>Key Feature:</strong> Real-time usage tracking combined with customizable per-app limits and focus-mode locks.</span>
             </div>
 
-            <h4>Core Methodologies & Architecture</h4>
+            <h4>Core Contributions & Implementation</h4>
             <ul>
-                <li><strong>Dataset Extraction:</strong> Cleaned a massive dataset representing 5,000+ individual listings containing attributes such as manufacturer, manufacturing year, mileage, engine volume, fuel type, and transmission.</li>
-                <li><strong>Categorical Encoding & Pipeline Construction:</strong> Applied One-Hot Encoding to categorical variables (fuel types, brand classes) and applied robust MinMax scaling to numerical metrics (mileage, engine size).</li>
-                <li><strong>Feature Selection Techniques:</strong> Utilized recursive feature elimination (RFE) to identify mileage, fuel efficiency, and vehicle age as the top three predictors of depreciation velocity.</li>
-                <li><strong>Model Fitting & Tuning:</strong> Tuned hyper-parameters of Decision Tree Regressors and Ridge Regression to match pricing models against standard vehicle market price charts.</li>
+                <li><strong>Full Native Development:</strong> Designed and implemented the complete application architecture using Android Studio, Java, and the Android SDK.</li>
+                <li><strong>Usage Tracking Engine:</strong> Implemented real-time system usage tracking and per-app activity monitors.</li>
+                <li><strong>Focus Mode & Locks:</strong> Built customizable per-app limits and strict focus-mode lock screens to restrict distracting applications.</li>
+                <li><strong>Graphical Analytics:</strong> Developed an intuitive graphical dashboard turning raw usage data into actionable, habit-forming insights.</li>
             </ul>
 
-            <h4>Key Technical Insights</h4>
-            <p>Integrating feature selection techniques effectively countered multi-collinearity (e.g., between age and mileage). The study confirmed that automated regression pricing reduces human appraisal duration by 95% while keeping errors within a tight ±7% margin relative to market listing rates.</p>
+            <h4>GitHub Repository</h4>
+            <p><a href="https://github.com/bharathnow" target="_blank" style="color:#00f2fe; text-decoration:underline;"><i class="fa-brands fa-github"></i> github.com/bharathnow</a></p>
+        `
+    },
+    'stock-predict': {
+        meta: '2023 • AI & Supervised ML Regression',
+        title: 'Stock Price Prediction Using Artificial Intelligence',
+        tags: ['Python', 'Machine Learning', 'Scikit-Learn', 'Pandas', 'NumPy'],
+        content: `
+            <h4>Project Abstract & Objectives</h4>
+            <p>Developed an artificial intelligence regression model designed to predict stock market price movements and trend trajectories using historical financial datasets.</p>
+            
+            <div class="metric-highlight">
+                <i class="fa-solid fa-chart-line"></i>
+                <span><strong>Key Result:</strong> Achieved <strong>80%–85% prediction accuracy</strong> across historical TCS and Amazon market data.</span>
+            </div>
+
+            <h4>Core Contributions & Implementation</h4>
+            <ul>
+                <li><strong>Financial Data Processing:</strong> Cleaned and structured historical financial market datasets from TCS and Amazon using Pandas and NumPy.</li>
+                <li><strong>Feature Engineering & Normalization:</strong> Engineered technical feature inputs, normalized dataset attributes, and removed statistical outliers.</li>
+                <li><strong>ML Regression Modeling:</strong> Applied supervised regression models in Scikit-Learn to evaluate price trends and cross-validate accuracy metrics.</li>
+            </ul>
+
+            <h4>GitHub Repository</h4>
+            <p><a href="https://github.com/bharathnow" target="_blank" style="color:#00f2fe; text-decoration:underline;"><i class="fa-brands fa-github"></i> github.com/bharathnow</a></p>
         `
     }
 };
 
 function openProjectModal(projectId) {
     const data = projectDetails[projectId];
-    if (!data) return;
+    if (!data || !modal || !modalBody) return;
 
-    // Inject content
     let tagsHtml = data.tags.map(tag => `<span>${tag}</span>`).join('');
     
     modalBody.innerHTML = `
@@ -397,26 +423,27 @@ function openProjectModal(projectId) {
         <div class="modal-body">${data.content}</div>
     `;
 
-    // Open Modal
     modal.classList.add('open');
-    document.body.style.overflow = 'hidden'; // Lock background scrolling
+    document.body.style.overflow = 'hidden';
 }
 
 function closeProjectModal() {
-    modal.classList.remove('open');
-    document.body.style.overflow = ''; // Unlock background scrolling
+    if (modal) {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
 }
 
-// Close modal when clicking outside contents
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        closeProjectModal();
-    }
-});
+if (modal) {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeProjectModal();
+        }
+    });
+}
 
-// Close modal on Escape keypress
 window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('open')) {
+    if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
         closeProjectModal();
     }
 });
@@ -430,32 +457,24 @@ function handleContactSubmit(event) {
     
     const form = document.getElementById('contact-form');
     const feedback = document.getElementById('form-feedback');
-    
-    // Basic field reads
-    const name = document.getElementById('form-name').value;
-    const email = document.getElementById('form-email').value;
-    const subject = document.getElementById('form-subject').value;
-    const message = document.getElementById('form-message').value;
+    if (!form || !feedback) return;
 
-    // Show processing animation
+    const name = document.getElementById('form-name').value;
+
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.innerHTML;
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> Sending...';
 
-    // Simulate network latency (1.5 seconds)
     setTimeout(() => {
-        // Simulate successful email submission
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnText;
 
         feedback.className = 'form-feedback-message success';
-        feedback.innerHTML = `<strong>Success, ${name}!</strong> Your message has been received. Bharath will get back to you shortly.`;
+        feedback.innerHTML = `<strong>Message Received, ${name}!</strong> Thank you for reaching out. Bharath will respond shortly.`;
         
-        // Reset fields
         form.reset();
 
-        // Fade out message after 5 seconds
         setTimeout(() => {
             feedback.style.display = 'none';
         }, 5000);
