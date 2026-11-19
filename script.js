@@ -154,10 +154,10 @@ animateParticles();
    ========================================================================== */
 const typedTextElement = document.getElementById('typed-text');
 const roles = [
-    'Autonomous AI Research Agents.',
-    'Machine Learning & Data Models.',
-    'Android Productivity Applications.',
-    'Full-Stack Software Solutions.'
+    'Predictive Machine Learning.',
+    'Native Android Applications.',
+    'Scalable Software Systems.',
+    'Data Science & Analytics.'
 ];
 
 let roleIndex = 0;
@@ -288,28 +288,8 @@ skillTabs.forEach(tab => {
 
 
 /* ==========================================================================
-   INTERSECTION OBSERVER FOR FADE-IN & SKILL PROGRESS BARS
+   INTERSECTION OBSERVER FOR FADE-IN ANIMATIONS
    ========================================================================== */
-// Observe skills progress bars for loading animation when viewed
-const skillsSection = document.getElementById('skills');
-const progressBars = document.querySelectorAll('.skill-bar-fill');
-
-const skillsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            progressBars.forEach(bar => {
-                const targetProgress = bar.getAttribute('data-progress');
-                bar.style.width = targetProgress;
-            });
-            skillsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.15 });
-
-if (skillsSection) {
-    skillsObserver.observe(skillsSection);
-}
-
 // Observe fade-in animations on scroll
 const fadeInElements = document.querySelectorAll('.fade-in');
 
@@ -335,25 +315,29 @@ const modalBody = document.getElementById('modal-body-content');
 
 // Project Data Details (Matching Resume Exactly)
 const projectDetails = {
-    'ae-02-agent': {
-        meta: '2025 • Top 3 Hackathon Winner • Claude API Backbone',
-        title: 'Self-Evolving Autonomous Research Agent (AE-02) — 24-Hour Hackathon',
-        tags: ['Next.js', 'React.js', 'TypeScript', 'Claude API (LLM Backbone)', 'Antigravity'],
+    'car-predict': {
+        meta: '2023 • Predictive Analytics & Comparative Evaluation',
+        title: 'Comparing Regression Analysis and Market Analysis in Predicting Car Prices',
+        tags: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Feature Engineering', 'Market Analysis'],
         content: `
-            <h4>Project Abstract & Hackathon Highlights</h4>
-            <p>Built during an intensive 24-hour hackathon, AE-02 is a self-evolving autonomous research agent designed to perform complex research workflows end-to-end using Claude API as its LLM engine.</p>
+            <h4>Project Abstract & Problem Statement</h4>
+            <p>Evaluating secondhand automobile values is a complex multi-factor problem. Traditional appraisal processes are slow and subjective. This project automates valuation by contrasting structured regression modeling directly with general market analysis heuristics.</p>
             
             <div class="metric-highlight">
-                <i class="fa-solid fa-trophy"></i>
-                <span><strong>Award:</strong> Placed <strong>Top 3</strong> out of all competing teams in the hackathon.</span>
+                <i class="fa-solid fa-gauge-high"></i>
+                <span><strong>Key Result:</strong> Modeled a dataset of 5,000+ car listings, improving predictions by 20% compared to baseline pricing models.</span>
             </div>
 
-            <h4>Core Contributions & Implementation</h4>
+            <h4>Core Methodologies & Architecture</h4>
             <ul>
-                <li><strong>Frontend Architecture:</strong> Built the full web interface using Next.js, React.js, and TypeScript, delivering a responsive real-time research dashboard.</li>
-                <li><strong>LLM Backbone Integration:</strong> Connected Claude API endpoints to support multi-step autonomous research cycles and self-evolving query refinements.</li>
-                <li><strong>Critical Bug Fix:</strong> Diagnosed and fixed a critical bug in the <code>runResearchApi</code> function (<code>api.ts</code>) that silently swallowed backend errors, restoring accurate real-time research results across the full pipeline.</li>
+                <li><strong>Dataset Extraction:</strong> Cleaned a massive dataset representing 5,000+ individual listings containing attributes such as manufacturer, manufacturing year, mileage, engine volume, fuel type, and transmission.</li>
+                <li><strong>Categorical Encoding & Pipeline Construction:</strong> Applied One-Hot Encoding to categorical variables (fuel types, brand classes) and applied robust MinMax scaling to numerical metrics (mileage, engine size).</li>
+                <li><strong>Feature Selection Techniques:</strong> Utilized recursive feature elimination (RFE) to identify mileage, fuel efficiency, and vehicle age as the top three predictors of depreciation velocity.</li>
+                <li><strong>Model Fitting & Tuning:</strong> Tuned hyper-parameters of Decision Tree Regressors and Ridge Regression to match pricing models against standard vehicle market price charts.</li>
             </ul>
+
+            <h4>Key Technical Insights</h4>
+            <p>Integrating feature selection techniques effectively countered multi-collinearity (e.g., between age and mileage). The study confirmed that automated regression pricing reduces human appraisal duration by 95% while keeping errors within a tight ±7% margin relative to market listing rates.</p>
 
             <h4>GitHub Repository</h4>
             <p><a href="https://github.com/bharathnow" target="_blank" style="color:#00f2fe; text-decoration:underline;"><i class="fa-brands fa-github"></i> github.com/bharathnow</a></p>

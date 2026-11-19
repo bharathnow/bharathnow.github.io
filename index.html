@@ -3,11 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mothukuri Bharath | Software Engineer & AI/ML Developer</title>
+    <title>Mothukuri Bharath | Software Engineer & AI Developer</title>
     <!-- Meta tags for SEO -->
-    <meta name="description" content="Portfolio of Mothukuri Bharath, Computer Science & AI student, Machine Learning & Data Science Intern, Top 3 Hackathon Winner (Autonomous Research Agent), and Android Developer.">
-    <meta name="keywords" content="Mothukuri Bharath, AI Developer, Software Engineer, Machine Learning, Data Science, Portfolio, Java, Python, Saveetha School of Engineering, Claude API, Next.js, Android Studio">
+    <meta name="description" content="Portfolio of Mothukuri Bharath | Computer Science & AI student at Saveetha School of Engineering, Machine Learning & Data Science Intern, Android Developer, and Oracle Certified in Java SE 17 & MySQL.">
+    <meta name="keywords" content="Mothukuri Bharath, AI Developer, Software Engineer, Machine Learning, Data Science, Portfolio, Java, Python, Saveetha School of Engineering, Android Studio, MySQL">
     <meta name="author" content="Mothukuri Bharath">
+    
+    <!-- Open Graph Meta Tags for LinkedIn, Twitter, and Social Previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bharathnow.github.io/">
+    <meta property="og:title" content="Mothukuri Bharath | Software Engineer & AI Developer">
+    <meta property="og:description" content="Explore projects in Machine Learning, Native Android (Detox App), Predictive Analytics, and Oracle-Certified Java & MySQL development.">
+    <meta property="og:image" content="https://bharathnow.github.io/preview.png">
+    <meta property="og:image:secure_url" content="https://bharathnow.github.io/preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Mothukuri Bharath Portfolio Preview">
+    <meta property="og:site_name" content="Mothukuri Bharath Portfolio">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bharathnow.github.io/">
+    <meta name="twitter:title" content="Mothukuri Bharath | Software Engineer & AI Developer">
+    <meta name="twitter:description" content="Explore projects in Machine Learning, Native Android (Detox App), Predictive Analytics, and Oracle-Certified Java & MySQL development.">
+    <meta name="twitter:image" content="https://bharathnow.github.io/preview.png">
     
     <!-- Google Fonts: Outfit for Headings, Inter for Body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,7 +71,7 @@
     <section id="home" class="hero-section">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="badge-glow"><i class="fa-solid fa-trophy"></i> Top 3 Hackathon Winner</div>
+                <div class="badge-glow"><i class="fa-solid fa-code"></i> Software Engineer &amp; AI Developer</div>
                 <h1 class="hero-title">
                     Hi, I'm <span class="text-gradient">Mothukuri Bharath</span>
                 </h1>
@@ -59,7 +79,7 @@
                     Building <span id="typed-text" class="typed-text"></span><span class="cursor">&nbsp;</span>
                 </h2>
                 <p class="hero-description">
-                    Computer Science & AI undergraduate (CGPA: 8.59/10.0) with hands-on experience across Machine Learning, Data Science, and full-stack software development. Placed Top 3 at a competitive 24-hour hackathon building an LLM-powered research agent, and independently shipped a full Android productivity app.
+                    Computer Science & AI undergraduate (CGPA: 8.59/10.0) at Saveetha School of Engineering with hands-on experience in Machine Learning, Data Science, and full-stack software development. Oracle Certified in Java SE 17 & MySQL, experienced in predictive regression analytics, and independently shipped Detox, a native Android productivity app.
                 </p>
                 <div class="hero-actions">
                     <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code-branch"></i> View My Work</a>
@@ -78,20 +98,23 @@
                         <span class="dot red"></span>
                         <span class="dot yellow"></span>
                         <span class="dot green"></span>
-                        <span class="window-title">research_agent.py</span>
+                        <span class="window-title">ml_pipeline.py</span>
                     </div>
                     <div class="code-editor">
-                        <pre><code><span class="keyword">from</span> antigravity.ai <span class="keyword">import</span> ResearchAgent
-<span class="keyword">from</span> anthropic <span class="keyword">import</span> ClaudeAPI
+                        <pre><code><span class="keyword">import</span> numpy <span class="keyword">as</span> np
+<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
+<span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split
+<span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestRegressor
 
-<span class="comment"># Autonomous Research Agent (AE-02)</span>
-agent = ResearchAgent(
-    model=<span class="string">"claude-3-5-sonnet"</span>,
-    backbone=<span class="string">"LLM Pipeline"</span>
-)
+<span class="comment"># Load &amp; preprocess market dataset</span>
+data = pd.read_csv(<span class="string">"vehicle_trends.csv"</span>)
+X = data.drop(columns=[<span class="string">"price"</span>])
+y = data[<span class="string">"price"</span>]
 
-results = agent.run(<span class="string">"Self-Evolving Research"</span>)
-print(<span class="string">"Hackathon Result: Top 3 Winner!"</span>)</code></pre>
+<span class="comment"># Train predictive regression model</span>
+model = RandomForestRegressor(n_estimators=100, random_state=42)
+model.fit(X, y)
+print(<span class="string">"Evaluation Accuracy: 85%+"</span>)</code></pre>
                     </div>
                     <div class="glow-accent"></div>
                 </div>
@@ -103,8 +126,8 @@ print(<span class="string">"Hackathon Result: Top 3 Winner!"</span>)</code></pre
                         <div class="metric-lbl">CGPA (B.E. CSE AI)</div>
                     </div>
                     <div class="mini-metric-card glass-card">
-                        <div class="metric-val">Top 3</div>
-                        <div class="metric-lbl">24-Hour Hackathon</div>
+                        <div class="metric-val">2+</div>
+                        <div class="metric-lbl">Oracle Certifications</div>
                     </div>
                 </div>
             </div>
@@ -131,7 +154,7 @@ print(<span class="string">"Hackathon Result: Top 3 Winner!"</span>)</code></pre
                         I am a **Computer Science & AI undergraduate** (CGPA: 8.59/10.0) at Saveetha School of Engineering, Chennai, with hands-on experience across Machine Learning, Data Science, and full-stack software development.
                     </p>
                     <p>
-                        I placed **Top 3 at a competitive 24-hour hackathon** building an LLM-powered autonomous research agent (AE-02) using Claude API and Next.js, and independently designed and shipped **Detox**, a native Android screen-time reduction app. Oracle-certified in Java SE 17 and MySQL, I am passionate about engineering production-grade AI solutions and scalable software.
+                        I specialize in machine learning regression models, data pipelines, and mobile development. I independently designed and shipped **Detox**, a native Android screen-time reduction app built with Java and Android SDK. Oracle-certified in Java SE 17 and MySQL, I am passionate about engineering production-grade software solutions, scalable databases, and high-accuracy predictive algorithms.
                     </p>
                     
                     <div class="quick-facts">
@@ -209,133 +232,273 @@ print(<span class="string">"Hackathon Result: Top 3 Winner!"</span>)</code></pre
             <div class="skills-grid">
                 <!-- Languages & Web -->
                 <div class="skill-card glass-card" data-category="languages">
-                    <div class="skill-icon"><i class="fa-brands fa-python text-python"></i></div>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-brands fa-python text-python"></i></div>
+                        <span class="skill-level-badge">Advanced</span>
+                    </div>
                     <h3 class="skill-name">Python</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="95%"></div></div>
-                    <span class="skill-percent">95%</span>
+                    <p class="skill-desc">Predictive modeling, data analytics pipelines & ML scripts</p>
+                    <div class="skill-tags">
+                        <span>Scikit-Learn</span>
+                        <span>Pandas</span>
+                        <span>NumPy</span>
+                    </div>
                 </div>
                 
                 <div class="skill-card glass-card" data-category="languages">
-                    <div class="skill-icon"><i class="fa-brands fa-java text-java"></i></div>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-brands fa-java text-java"></i></div>
+                        <span class="skill-level-badge certified">Oracle Certified</span>
+                    </div>
                     <h3 class="skill-name">Java</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="90%"></div></div>
-                    <span class="skill-percent">90%</span>
+                    <p class="skill-desc">Certified Java SE 17, OOP architectures & Android runtime</p>
+                    <div class="skill-tags">
+                        <span>Java SE 17</span>
+                        <span>OOP Design</span>
+                        <span>Multithreading</span>
+                    </div>
                 </div>
 
                 <div class="skill-card glass-card" data-category="languages">
-                    <div class="skill-icon"><code class="text-cpp">C++</code></div>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><code class="text-cpp">C++</code></div>
+                        <span class="skill-level-badge">Proficient</span>
+                    </div>
                     <h3 class="skill-name">C++ / C</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="85%"></div></div>
-                    <span class="skill-percent">85%</span>
+                    <p class="skill-desc">Algorithm design, memory management & low-level constructs</p>
+                    <div class="skill-tags">
+                        <span>Data Structures</span>
+                        <span>STL</span>
+                        <span>Algorithms</span>
+                    </div>
                 </div>
 
                 <div class="skill-card glass-card" data-category="languages">
-                    <div class="skill-icon"><i class="fa-solid fa-database text-mysql"></i></div>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-solid fa-database text-mysql"></i></div>
+                        <span class="skill-level-badge certified">Oracle Certified</span>
+                    </div>
                     <h3 class="skill-name">SQL</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="88%"></div></div>
-                    <span class="skill-percent">88%</span>
+                    <p class="skill-desc">Relational database schemas, ACID transactions & indexing</p>
+                    <div class="skill-tags">
+                        <span>MySQL</span>
+                        <span>Complex Queries</span>
+                        <span>Normalization</span>
+                    </div>
                 </div>
 
                 <div class="skill-card glass-card" data-category="languages">
-                    <div class="skill-icon"><i class="fa-brands fa-react text-react"></i></div>
-                    <h3 class="skill-name">React.js / Next.js</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="88%"></div></div>
-                    <span class="skill-percent">88%</span>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-brands fa-react text-react"></i></div>
+                        <span class="skill-level-badge">Proficient</span>
+                    </div>
+                    <h3 class="skill-name">React.js & Web</h3>
+                    <p class="skill-desc">Modular UI components, state management & REST consumption</p>
+                    <div class="skill-tags">
+                        <span>Components</span>
+                        <span>Hooks</span>
+                        <span>Responsive UI</span>
+                    </div>
                 </div>
 
                 <div class="skill-card glass-card" data-category="languages">
-                    <div class="skill-icon"><code class="text-c">TS</code></div>
-                    <h3 class="skill-name">TypeScript</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="85%"></div></div>
-                    <span class="skill-percent">85%</span>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><code class="text-c">TS</code></div>
+                        <span class="skill-level-badge">Proficient</span>
+                    </div>
+                    <h3 class="skill-name">TypeScript / JS</h3>
+                    <p class="skill-desc">Type safety, asynchronous programming & web standards</p>
+                    <div class="skill-tags">
+                        <span>TypeScript</span>
+                        <span>JavaScript ES6+</span>
+                        <span>DOM API</span>
+                    </div>
                 </div>
                 
                 <!-- Machine Learning & AI -->
                 <div class="skill-card glass-card" data-category="ml">
-                    <div class="skill-icon"><i class="fa-solid fa-brain text-sklearn"></i></div>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-solid fa-brain text-sklearn"></i></div>
+                        <span class="skill-level-badge">Proficient</span>
+                    </div>
                     <h3 class="skill-name">Machine Learning</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="90%"></div></div>
-                    <span class="skill-percent">90%</span>
+                    <p class="skill-desc">Supervised regression & classification models with high accuracy</p>
+                    <div class="skill-tags">
+                        <span>Regression</span>
+                        <span>Classification</span>
+                        <span>Evaluation</span>
+                    </div>
                 </div>
 
                 <div class="skill-card glass-card" data-category="ml">
-                    <div class="skill-icon"><i class="fa-solid fa-robot text-react"></i></div>
-                    <h3 class="skill-name">LLM Integration (Claude API)</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="92%"></div></div>
-                    <span class="skill-percent">92%</span>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-solid fa-chart-line text-pandas"></i></div>
+                        <span class="skill-level-badge">Proficient</span>
+                    </div>
+                    <h3 class="skill-name">Predictive Analytics</h3>
+                    <p class="skill-desc">Stock market forecasting & automotive valuation models</p>
+                    <div class="skill-tags">
+                        <span>Financial Data</span>
+                        <span>Trend Analysis</span>
+                        <span>RFE</span>
+                    </div>
                 </div>
 
                 <div class="skill-card glass-card" data-category="ml">
-                    <div class="skill-icon"><i class="fa-solid fa-microchip text-sklearn"></i></div>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-solid fa-microchip text-sklearn"></i></div>
+                        <span class="skill-level-badge">Proficient</span>
+                    </div>
                     <h3 class="skill-name">Scikit-Learn</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="88%"></div></div>
-                    <span class="skill-percent">88%</span>
+                    <p class="skill-desc">Decision trees, ensemble methods, Ridge regression & pipelines</p>
+                    <div class="skill-tags">
+                        <span>Model Fitting</span>
+                        <span>Hyperparameter Tuning</span>
+                        <span>Cross-Val</span>
+                    </div>
                 </div>
 
                 <div class="skill-card glass-card" data-category="ml">
-                    <div class="skill-icon"><i class="fa-solid fa-chart-line text-pandas"></i></div>
-                    <h3 class="skill-name">Pandas / NumPy / Matplotlib</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="92%"></div></div>
-                    <span class="skill-percent">92%</span>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-solid fa-chart-pie text-pandas"></i></div>
+                        <span class="skill-level-badge">Advanced</span>
+                    </div>
+                    <h3 class="skill-name">Pandas & NumPy</h3>
+                    <p class="skill-desc">High-throughput data wrangling, preprocessing & visualization</p>
+                    <div class="skill-tags">
+                        <span>Pandas</span>
+                        <span>NumPy</span>
+                        <span>Matplotlib</span>
+                    </div>
                 </div>
 
                 <!-- Mobile Development -->
                 <div class="skill-card glass-card" data-category="mobile">
-                    <div class="skill-icon"><i class="fa-brands fa-android text-android"></i></div>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-brands fa-android text-android"></i></div>
+                        <span class="skill-level-badge">Proficient</span>
+                    </div>
                     <h3 class="skill-name">Android Studio & SDK</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="88%"></div></div>
-                    <span class="skill-percent">88%</span>
+                    <p class="skill-desc">Native Android productivity application design & implementation</p>
+                    <div class="skill-tags">
+                        <span>Activities</span>
+                        <span>Android SDK</span>
+                        <span>Gradle</span>
+                    </div>
                 </div>
 
                 <div class="skill-card glass-card" data-category="mobile">
-                    <div class="skill-icon"><i class="fa-solid fa-mobile-screen-button text-react"></i></div>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-solid fa-mobile-screen-button text-react"></i></div>
+                        <span class="skill-level-badge">Proficient</span>
+                    </div>
                     <h3 class="skill-name">Mobile UI/UX</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="85%"></div></div>
-                    <span class="skill-percent">85%</span>
+                    <p class="skill-desc">Intuitive, responsive touch layouts & usage dashboards</p>
+                    <div class="skill-tags">
+                        <span>Material Design</span>
+                        <span>XML Layouts</span>
+                        <span>Interactive Views</span>
+                    </div>
+                </div>
+
+                <div class="skill-card glass-card" data-category="mobile">
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-solid fa-clock-rotate-left text-android"></i></div>
+                        <span class="skill-level-badge">Proficient</span>
+                    </div>
+                    <h3 class="skill-name">Background Services</h3>
+                    <p class="skill-desc">Device usage monitoring, permissions & focus-mode app locking</p>
+                    <div class="skill-tags">
+                        <span>UsageStats</span>
+                        <span>App Lockers</span>
+                        <span>System APIs</span>
+                    </div>
                 </div>
 
                 <!-- Tools & Platforms -->
                 <div class="skill-card glass-card" data-category="tools">
-                    <div class="skill-icon"><i class="fa-solid fa-database text-mysql"></i></div>
-                    <h3 class="skill-name">MySQL</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="90%"></div></div>
-                    <span class="skill-percent">90%</span>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-solid fa-database text-mysql"></i></div>
+                        <span class="skill-level-badge certified">Certified</span>
+                    </div>
+                    <h3 class="skill-name">MySQL Database</h3>
+                    <p class="skill-desc">Enterprise relational DB design, performance tuning & joins</p>
+                    <div class="skill-tags">
+                        <span>Transactions</span>
+                        <span>Indexes</span>
+                        <span>Schema Design</span>
+                    </div>
                 </div>
 
                 <div class="skill-card glass-card" data-category="tools">
-                    <div class="skill-icon"><i class="fa-brands fa-github text-github"></i></div>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-brands fa-github text-github"></i></div>
+                        <span class="skill-level-badge">Proficient</span>
+                    </div>
                     <h3 class="skill-name">Git & GitHub</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="92%"></div></div>
-                    <span class="skill-percent">92%</span>
+                    <p class="skill-desc">Distributed version control, release branching & collaboration</p>
+                    <div class="skill-tags">
+                        <span>Git CLI</span>
+                        <span>Branching</span>
+                        <span>Open Source</span>
+                    </div>
                 </div>
 
                 <div class="skill-card glass-card" data-category="tools">
-                    <div class="skill-icon"><i class="fa-solid fa-shield-halved text-burp"></i></div>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-solid fa-shield-halved text-burp"></i></div>
+                        <span class="skill-level-badge">Competent</span>
+                    </div>
                     <h3 class="skill-name">Burp Suite</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="75%"></div></div>
-                    <span class="skill-percent">75%</span>
+                    <p class="skill-desc">Web application vulnerability testing & network analysis</p>
+                    <div class="skill-tags">
+                        <span>HTTP Proxy</span>
+                        <span>Security Audit</span>
+                        <span>App Sec</span>
+                    </div>
                 </div>
 
                 <!-- Subjects & Soft Skills -->
                 <div class="skill-card glass-card" data-category="subjects">
-                    <div class="skill-icon"><i class="fa-solid fa-network-wired text-ds"></i></div>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-solid fa-network-wired text-ds"></i></div>
+                        <span class="skill-level-badge">Proficient</span>
+                    </div>
                     <h3 class="skill-name">DSA & DBMS</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="88%"></div></div>
-                    <span class="skill-percent">88%</span>
+                    <p class="skill-desc">Algorithmic complexity, relational modeling & data structures</p>
+                    <div class="skill-tags">
+                        <span>Complexity O(n)</span>
+                        <span>Trees & Graphs</span>
+                        <span>ACID</span>
+                    </div>
                 </div>
 
                 <div class="skill-card glass-card" data-category="subjects">
-                    <div class="skill-icon"><i class="fa-solid fa-gears text-os"></i></div>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-solid fa-gears text-os"></i></div>
+                        <span class="skill-level-badge">Proficient</span>
+                    </div>
                     <h3 class="skill-name">Operating Systems & OOP</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="88%"></div></div>
-                    <span class="skill-percent">88%</span>
+                    <p class="skill-desc">Processes, memory management, encapsulation & polymorphism</p>
+                    <div class="skill-tags">
+                        <span>Concurrency</span>
+                        <span>Memory Hierarchy</span>
+                        <span>SOLID</span>
+                    </div>
                 </div>
 
                 <div class="skill-card glass-card" data-category="subjects">
-                    <div class="skill-icon"><i class="fa-solid fa-users text-solving"></i></div>
-                    <h3 class="skill-name">Problem Solving & Teamwork</h3>
-                    <div class="skill-bar-bg"><div class="skill-bar-fill" data-progress="95%"></div></div>
-                    <span class="skill-percent">95%</span>
+                    <div class="skill-card-top">
+                        <div class="skill-icon"><i class="fa-solid fa-users text-solving"></i></div>
+                        <span class="skill-level-badge">Advanced</span>
+                    </div>
+                    <h3 class="skill-name">Analytical & Teamwork</h3>
+                    <p class="skill-desc">Fast debugging, problem decomposition & agile communication</p>
+                    <div class="skill-tags">
+                        <span>Critical Thinking</span>
+                        <span>Team Delivery</span>
+                        <span>Problem Solving</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -415,42 +578,41 @@ print(<span class="string">"Hackathon Result: Top 3 Winner!"</span>)</code></pre
                 <!-- Project 1 -->
                 <div class="project-card glass-card fade-in">
                     <div class="project-media-wrapper">
+                        <!-- Custom designed svg regression graph mockup -->
                         <svg class="project-svg-visual" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="gradient-p1" x1="0%" y1="0%" x2="100%" y2="100%">
                                     <stop offset="0%" stop-color="#4facfe" />
                                     <stop offset="100%" stop-color="#00f2fe" />
                                 </linearGradient>
-                                <linearGradient id="glow-p1" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" stop-color="rgba(0,242,254,0.15)" />
-                                    <stop offset="100%" stop-color="rgba(79,172,254,0)" />
-                                </linearGradient>
                             </defs>
                             <rect width="100%" height="100%" fill="#121829"/>
-                            <circle cx="200" cy="100" r="50" fill="none" stroke="url(#gradient-p1)" stroke-width="3"/>
-                            <circle cx="200" cy="100" r="25" fill="none" stroke="#00f2fe" stroke-width="2"/>
-                            <path d="M 100 100 L 175 100 M 225 100 L 300 100 M 200 25 L 200 75 M 200 125 L 200 175" stroke="url(#gradient-p1)" stroke-width="2"/>
-                            <circle cx="100" cy="100" r="6" fill="#00f2fe"/>
-                            <circle cx="300" cy="100" r="6" fill="#4facfe"/>
-                            <text x="20" y="35" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="16" font-weight="600">AE-02 Autonomous Agent</text>
-                            <text x="20" y="55" fill="#8f9bb3" font-family="'Inter', sans-serif" font-size="12">Top 3 Finish • 24-Hour Hackathon</text>
+                            <line x1="40" y1="170" x2="360" y2="50" stroke="url(#gradient-p1)" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="80" cy="130" r="5" fill="#00f2fe" opacity="0.8"/>
+                            <circle cx="120" cy="160" r="5" fill="#4facfe" opacity="0.8"/>
+                            <circle cx="180" cy="100" r="5" fill="#00f2fe" opacity="0.8"/>
+                            <circle cx="220" cy="80" r="5" fill="#4facfe" opacity="0.8"/>
+                            <circle cx="280" cy="90" r="5" fill="#00f2fe" opacity="0.8"/>
+                            <circle cx="320" cy="40" r="5" fill="#4facfe" opacity="0.8"/>
+                            <text x="20" y="35" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="16" font-weight="600">Car Price Predictor</text>
+                            <text x="20" y="55" fill="#8f9bb3" font-family="'Inter', sans-serif" font-size="12">Regression vs Market Analysis</text>
                         </svg>
-                        <div class="project-overlay-badge"><i class="fa-solid fa-trophy"></i> Top 3 Winner</div>
+                        <div class="project-overlay-badge">+20% Accuracy Boost</div>
                     </div>
                     <div class="project-info">
-                        <div class="project-meta">2025 • LLM Backbone & AI Research</div>
-                        <h3 class="project-name">Self-Evolving Autonomous Research Agent (AE-02)</h3>
+                        <div class="project-meta">2023 • Predictive Analytics &amp; ML</div>
+                        <h3 class="project-name">Comparing Regression Analysis and Market Analysis in Predicting Car Prices</h3>
                         <p class="project-desc">
-                            Placed Top 3 at a competitive 24-hour hackathon building the frontend for a self-evolving autonomous research agent powered end-to-end by Claude API. Diagnosed & resolved critical API error-swallowing bugs.
+                            Built robust regression models analyzing features like mileage, fuel type, and manufacturing year on a dataset of 5,000+ vehicles to forecast market resale prices.
                         </p>
                         <div class="project-tags">
-                            <span>Next.js</span>
-                            <span>React.js</span>
-                            <span>TypeScript</span>
-                            <span>Claude API</span>
-                            <span>Antigravity</span>
+                            <span>Python</span>
+                            <span>Scikit-Learn</span>
+                            <span>Pandas</span>
+                            <span>NumPy</span>
+                            <span>Feature Selection</span>
                         </div>
-                        <button class="btn btn-card-details" onclick="openProjectModal('ae-02-agent')">Details <i class="fa-solid fa-arrow-right"></i></button>
+                        <button class="btn btn-card-details" onclick="openProjectModal('car-predict')">Details <i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
 

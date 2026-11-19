@@ -23,7 +23,7 @@ Visit the live website deployed on GitHub Pages:
 ## 📖 Highlights & Sections
 
 - 👨‍💻 **Hero & Bio**: Overview of academic background in Computer Science & AI at Saveetha School of Engineering.
-- 🏆 **Achievements**: Top-3 placement at 24-hr Hackathon with *IncidentMind* (Autonomous AI Incident Agent).
+- 🏆 **Credentials**: Oracle Certified in Java SE 17 and Oracle Certified in MySQL.
 - 📱 **Featured Projects**: Deep-dive showcases for *Detox* (Android digital wellbeing app), Machine Learning models, and Web applications.
 - 🛠️ **Interactive Skill Matrix**: Categorized breakdown of programming languages, ML frameworks, and developer toolchains.
 - 📄 **Interactive Resume View**: Clean, printable in-browser resume view (`resume.html`).
